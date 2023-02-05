@@ -51,7 +51,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "type": "lists_create_empty",
     "message0": "%{BKY_LISTS_CREATE_EMPTY_TITLE}",
     "output": Blockly.ST.ARRAY_TYPE,
-    "colour": "%{BKY_LISTS_HUE}",
+    "colour": "90",
     "tooltip": "%{BKY_LISTS_CREATE_EMPTY_TOOLTIP}",
     "helpUrl": "%{BKY_LISTS_CREATE_EMPTY_HELPURL}"
   },
@@ -71,7 +71,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "output": Blockly.ST.ARRAY_TYPE,
-    "colour": "%{BKY_LISTS_HUE}",
+    "colour": "90",
     "tooltip": "%{BKY_LISTS_REPEAT_TOOLTIP}",
     "helpUrl": "%{BKY_LISTS_REPEAT_HELPURL}"
   },
@@ -88,7 +88,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "output": Blockly.ST.ARRAY_TYPE,
     "inputsInline": true,
-    "colour": "%{BKY_LISTS_HUE}",
+    "colour": "90",
     "tooltip": "%{BKY_LISTS_REVERSE_TOOLTIP}",
     "helpUrl": "%{BKY_LISTS_REVERSE_HELPURL}"
   },
@@ -104,7 +104,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "output": 'BOOL',
-    "colour": "%{BKY_LISTS_HUE}",
+    "colour": "90",
     "tooltip": "%{BKY_LISTS_ISEMPTY_TOOLTIP}",
     "helpUrl": "%{BKY_LISTS_ISEMPTY_HELPURL}"
   },
@@ -120,7 +120,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "output": Blockly.ST.ANY_NUM_TYPE,
-    "colour": "%{BKY_LISTS_HUE}",
+    "colour": "90",
     "tooltip": "%{BKY_LISTS_LENGTH_TOOLTIP}",
     "helpUrl": "%{BKY_LISTS_LENGTH_HELPURL}"
   }
@@ -133,7 +133,7 @@ Blockly.Blocks['lists_create_with'] = {
    */
   init: function() {
     this.setHelpUrl(Blockly.Msg.LISTS_CREATE_WITH_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.itemCount_ = 3;
     this.updateShape_();
     this.setOutput(true, Blockly.ST.ARRAY_TYPE);
@@ -256,7 +256,7 @@ Blockly.Blocks['lists_create_with_container'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.appendDummyInput()
         .appendField(Blockly.Msg.LISTS_CREATE_WITH_CONTAINER_TITLE_ADD);
     this.appendStatementInput('STACK');
@@ -271,7 +271,7 @@ Blockly.Blocks['lists_create_with_item'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.appendDummyInput()
         .appendField(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE);
     this.setPreviousStatement(true);
@@ -293,7 +293,7 @@ Blockly.Blocks['lists_indexOf'] = {
           [Blockly.Msg.LISTS_INDEX_OF_LAST, 'LAST']
         ];
     this.setHelpUrl(Blockly.Msg.LISTS_INDEX_OF_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.setOutput(true, Blockly.ST.ANY_INT_TYPE);
     this.appendValueInput('VALUE')
         .setCheck(Blockly.ST.ARRAY_TYPE)
@@ -331,7 +331,7 @@ Blockly.Blocks['lists_getIndex'] = {
           [Blockly.Msg.LISTS_GET_INDEX_RANDOM, 'RANDOM']
         ];
     this.setHelpUrl(Blockly.Msg.LISTS_GET_INDEX_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     var modeMenu = new Blockly.FieldDropdown(MODE, function(value) {
       var isStatement = (value == 'REMOVE');
       this.sourceBlock_.updateStatement_(isStatement);
@@ -515,7 +515,7 @@ Blockly.Blocks['lists_setIndex'] = {
           [Blockly.Msg.LISTS_GET_INDEX_RANDOM, 'RANDOM']
         ];
     this.setHelpUrl(Blockly.Msg.LISTS_SET_INDEX_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.appendValueInput('LIST')
         .setCheck(Blockly.ST.ARRAY_TYPE)
         .appendField(Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST);
@@ -654,7 +654,7 @@ Blockly.Blocks['lists_getSublist'] = {
           [Blockly.Msg.LISTS_GET_SUBLIST_END_LAST, 'LAST']
         ];
     this.setHelpUrl(Blockly.Msg.LISTS_GET_SUBLIST_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.appendValueInput('LIST')
         .setCheck('Array')
         .appendField(Blockly.Msg.LISTS_GET_SUBLIST_INPUT_IN_LIST);
@@ -779,7 +779,7 @@ Blockly.Blocks['lists_sort'] = {
         }
       ],
       "output": Blockly.ST.ARRAY_TYPE,
-      "colour": Blockly.Msg.LISTS_HUE,
+      "colour": 90,
       "tooltip": Blockly.Msg.LISTS_SORT_TOOLTIP,
       "helpUrl": Blockly.Msg.LISTS_SORT_HELPURL
     });
@@ -787,10 +787,6 @@ Blockly.Blocks['lists_sort'] = {
 };
 
 Blockly.Blocks['lists_split'] = {
-  /**
-   * Block for splitting text into a list, or joining a list into text.
-   * @this Blockly.Block
-   */
   init: function() {
     // Assign 'this' to a variable for use in the closures below.
     var thisBlock = this;
@@ -803,12 +799,11 @@ Blockly.Blocks['lists_split'] = {
           thisBlock.updateType_(newMode);
         });
     this.setHelpUrl(Blockly.Msg.LISTS_SPLIT_HELPURL);
-    this.setColour(Blockly.Msg.LISTS_HUE);
+    this.setColour(90);
     this.appendValueInput('INPUT')
-        .setCheck(Blockly.ST.STRING_TYPE)
         .appendField(dropdown, 'MODE');
     this.appendValueInput('DELIM')
-        .setCheck(Blockly.ST.STRING_TYPE)
+        
         .appendField(Blockly.Msg.LISTS_SPLIT_WITH_DELIMITER);
     this.setInputsInline(true);
     this.setOutput(true, 'Array');
@@ -822,18 +817,13 @@ Blockly.Blocks['lists_split'] = {
       throw 'Unknown mode: ' + mode;
     });
   },
-  /**
-   * Modify this block to have the correct input and output types.
-   * @param {string} newMode Either 'SPLIT' or 'JOIN'.
-   * @private
-   * @this Blockly.Block
-   */
+ 
   updateType_: function(newMode) {
     if (newMode == 'SPLIT') {
       this.outputConnection.setCheck(Blockly.ST.ARRAY_TYPE);
-      this.getInput('INPUT').setCheck(Blockly.ST.STRING_TYPE);
+      this.getInput('INPUT');
     } else {
-      this.outputConnection.setCheck(Blockly.ST.STRING_TYPE);
+      this.outputConnection;
       this.getInput('INPUT').setCheck(Blockly.ST.ARRAY_TYPE);
     }
   },

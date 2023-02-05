@@ -48,7 +48,7 @@ Blockly.Blocks['math_max'] = {
      */
     init: function() {
         this.setHelpUrl("Help url");
-        this.setColour(Blockly.Msg.LISTS_HUE);
+        this.setColour(90);
         this.itemCount_ = 3;
         this.updateShape_();
         this.setOutput(true, Blockly.ST.ANY_ELEMENTARY_TYPE);
@@ -170,7 +170,7 @@ Blockly.Blocks['math_max_mutator'] = {
      * @this Blockly.Block
      */
     init: function() {
-        this.setColour(Blockly.Msg.LISTS_HUE);
+        this.setColour(90);
         this.appendDummyInput()
             .appendField(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE);
         this.setPreviousStatement(true);

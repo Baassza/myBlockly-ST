@@ -131,11 +131,7 @@
                 <shadow type="text"></shadow>
             </value>
         </block>
-        <block type="text_prepend">
-            <value name="TEXT">
-                <shadow type="text"></shadow>
-            </value>
-        </block>
+       
         <block type="text_length">
             <value name="VALUE">
                 <shadow type="text">
@@ -176,20 +172,7 @@
                 </block>
             </value>
         </block>
-        <block type="text_replace">
-            <value name="TEXT">
-                <block type="variables_get">
-                    <field name="VAR">{textVariable}</field>
-                </block>
-            </value>
-        </block>
-        <block type="text_delete">
-            <value name="TEXT">
-                <block type="variables_get">
-                    <field name="VAR">{textVariable}</field>
-                </block>
-            </value>
-        </block>
+        
         <block type="text_changeCase">
             <value name="TEXT">
                 <shadow type="text">
@@ -211,13 +194,7 @@
                 </shadow>
             </value>
         </block>
-        <block type="text_prompt_ext">
-            <value name="TEXT">
-                <shadow type="text">
-                    <field name="TEXT">abc</field>
-                </shadow>
-            </value>
-        </block>
+        
     </category>
     <category name="List" colour="90">
         <block type="lists_create_with">
@@ -287,9 +264,6 @@
         <block type="time_of_day_value"></block>
         <block type="date_and_time_value"></block>
     </category>
-    <category name="Function Blocks" colour="270">
-        <category name="Used blocks" custom="FUNCTION_BLOCK" colour="270"></category>
-        <category name="Custom blocks" custom="CUSTOM_FUNCTION_BLOCKS" colour="270"></category>
         <category name="Bistable" colour="270">
             <block type="function_block_sr"></block>
             <block type="function_block_rs"></block>
@@ -311,16 +285,5 @@
         <category name="Misc" colour="270">
             <block type="function_block_rtc"></block>
         </category>
-    </category>
-    <sep></sep>
     <category name="Variables" colour="100" custom="VARIABLE"></category>
-    <category name="Functions" colour="77" custom="FUNCTIONS"></category>
-	<category name="Configuration">
-        <block type="task_container"></block>
-        <block type="single_task"></block>
-        <block type="math_number">
-            <field name="NUM">123</field>
-        </block>
-        <block type="time_value"></block>
-    </category>
 </xml>

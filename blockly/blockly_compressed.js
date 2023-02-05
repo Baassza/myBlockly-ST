@@ -12158,6 +12158,11 @@ var Blockly = {};
 Blockly.Blocks = Object(null);
 Blockly.Touch = {};
 Blockly.Touch.touchIdentifier_ = null;
+Blockly.asyncSvgResize = function(a) {
+    Blockly.svgResizePending_ || (a || (a = Blockly.getMainWorkspace()), Blockly.svgResizePending_ = !0, setTimeout(function() {
+        Blockly.svgResize(a)
+    }, 0))
+};
 Blockly.Touch.TOUCH_MAP = {};
 goog.global.PointerEvent ? Blockly.Touch.TOUCH_MAP = {
     mousedown: ["pointerdown"],
@@ -20534,6 +20539,7 @@ Blockly.Flyout.prototype.hide = function() {
         this.reflowWrapper_ && (this.workspace_.removeChangeListener(this.reflowWrapper_), this.reflowWrapper_ = null)
     }
 };
+
 Blockly.Flyout.prototype.show = function(a) {
     this.workspace_.setResizesEnabled(!1);
     this.hide();
@@ -20567,6 +20573,8 @@ Blockly.Flyout.prototype.show = function(a) {
     this.reflowWrapper_ = this.reflow.bind(this);
     this.workspace_.addChangeListener(this.reflowWrapper_)
 };
+
+
 Blockly.Flyout.prototype.clearOldBlocks_ = function() {
     for (var a = this.workspace_.getTopBlocks(!1), b = 0, c; c = a[b]; b++) c.workspace == this.workspace_ && c.dispose(!1, !1);
     for (b = 0; b < this.mats_.length; b++)(a = this.mats_[b]) && goog.dom.removeNode(a);

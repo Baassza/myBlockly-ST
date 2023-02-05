@@ -28,7 +28,7 @@ Blockly.ST['text_append'] = function (block) {
     var original = block.getField("VAR").getText();
     var appended = Blockly.ST.valueToCode(block, "TEXT", Blockly.ST.ORDER_ATOMIC);
     var code = original + " := " + "CONCAT(" + original + "," + appended + ");";
-    return code;
+    return '';
 };
 
 Blockly.ST['text_prepend'] = function (block) {
