@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#00878F">
+  <link rel="icon" href="img/favicon.ico">
+  <title class="translatable_title">myBlockly</title>
+
+  <!-- Materialize, Prettify, and Ardublockly CSS -->
+  <link rel="stylesheet" href="materialize/materialize.css" media="screen,projection">
+  <link rel="stylesheet" href="prettify/arduino.css">
+  <link rel="stylesheet" href="ardublockly.css" media="screen,projection">
+  
+
+  <script src="./blockly/blockly_compressed.js"></script>
+  <script src="js/editor/base.js"></script>
+  <script src="ardublockly_toolbox.js"></script>
+  <script src="js/generators/structured_text.js"></script>
+<!-- Blocks Definitions -->
+<script src="js/blocks/lists.js"></script>
+<script src="js/blocks/logic.js"></script>
+<script src="js/blocks/loops.js"></script>
+<script src="js/blocks/math.js"></script>
+<script src="js/blocks/procedures.js"></script>
+<script src="js/blocks/text.js"></script>
+<script src="js/blocks/variables.js"></script>
+<script src="js/blocks/variables_dynamic.js"></script>
+<script src="js/blocks/conversions.js"></script>
+<script src="js/blocks/time_date.js"></script>
+<script src="js/blocks/function_blocks.js"></script>
+<script src="js/blocks/configuration.js"></script>
+
+<!-- Generators -->
+<script src="js/generators/structured_text/logic.js"></script>
+<script src="js/generators/structured_text/loops.js"></script>
+<script src="js/generators/structured_text/math.js"></script>
+<script src="js/generators/structured_text/variables.js"></script>
+<script src="js/generators/structured_text/text.js"></script>
+<script src="js/generators/structured_text/procedures.js"></script>
+<script src="js/generators/structured_text/conversions.js"></script>
+<script src="js/generators/structured_text/time_date.js"></script>
+<script src="js/generators/structured_text/function_blocks.js"></script>
+<script src="js/generators/structured_text/configration.js"></script>
+  <script src="./blockly/msg/js/en.js"></script>
+  <script src="save_arduino.js"></script>
+</head>
+
+<body>
+<!-- Horizontal Navigation bar -->
+<nav class="nav-fixed arduino_orange">
+  <div class="nav-wrapper container">
+    <a class="show-on-large button-collapse" href="#" data-activates="slide-out" id="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <a id="logo-container" class="brand-logo">
+      <span class="app_title translatable_title">myBlockly:</span>
+      <!-- Sketch name editable text field -->
+      <span class="sketch_name_wrapper">
+          <i class="mdi-image-edit sketch_name_icon"></i>
+          <input id="sketch_name" class="sketch_name" type="text">
+        </span>
+    </a>
+    <!-- Horizontal Navbar links only shown on large resolutions -->
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="#" id="button_load"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
+      <li><a href="#" id="button_save"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li>
+      <li id="menu_arduino"><a href="#" onclick="save_Arduino()"><span class="translatable_deleteAll">To Arduino</span><img  class="mdi-file-file-download left" src="img/arduino-logo.png"/></a></li>
+      <li><a href="#" id="button_delete"><span class="translatable_deleteAll">Delete All</span><i class="mdi-action-delete left"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- Content -->
+<div class="container" id="main">
+  <div class="row">
+    <div class="col s12 m12 l8" style="position:relative">
+      <!-- Toolbox visibility button -->
+      <a id="button_toggle_toolbox" class="waves-effect waves-light btn-flat button_toggle_toolbox_off" ><i id="button_toggle_toolbox_icon" class="mdi-action-visibility-off"></i></a>
+      <!-- Arduino IDE action buttons -->
+      <div id="ide_buttons_wrapper" style="visibility: hidden">
+        <a id="button_ide_left" class="waves-effect waves-light waves-circle btn-floating z-depth-1-half arduino_yellow"><i id="button_ide_left_icon" class="mdi-action-open-in-browser"></i></a>
+        <a id="button_ide_middle" class="waves-effect waves-light waves-circle btn-floating z-depth-1-half arduino_teal"><i id="button_ide_middle_icon" class="mdi-navigation-check"></i></a>
+        <a id="button_ide_large" class="waves-effect waves-light waves-circle btn-floating z-depth-1-half arduino_orange"><i id="button_ide_large_icon" class="mdi-av-play-arrow"></i></a>
+        <div id="button_ide_large_spinner" class="preloader-wrapper active ide_loader" style="display:none">
+          <div class="spinner-layer spinner-orange">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+          </div>
+          <div class="spinner-layer spinner-dark-teal">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+          </div>
+          <div class="spinner-layer spinner-yellow">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+          </div>
+          <div class="spinner-layer spinner-light-teal">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- Blockly Panel -->
+      <div class="card-panel white" style="padding: 0">
+        <div id="blocks_panel" class="content blocks_panel_large">
+          <div id="content_blocks" class="content z-depth-1"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m12 l4">
+      <ul class="collapsible z-depth-1" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header ui-disabled">
+            <span class="collapsible_logo">{ }</span>
+            <span class="translatable_arduinoSourceCode">Arduino Source Code</span>
+          </div>
+          <pre id="content_arduino" class="content content_height_transition content_arduino_large"></pre>
+        </li>
+        <li id="XML">
+          <div class="collapsible-header" id="xml_collapsible_header">
+            <span class="collapsible_logo">&#60; &#62;</span>
+            <span class="translatable_blocksXml">Blocks XML</span>
+          </div>
+          <div class="collapsible-body" style="position:relative" id="xml_collapsible_body">
+            <a class="btn-floating btn-large waves-effect waves-light arduino_teal z-depth-1-half" style="visibility: hidden" id="button_load_xml"><i class="mdi-action-extension"></i></a>
+            <textarea id="content_xml" class="content content_height_transition content_xml_large" wrap="soft"></textarea>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <a class="btn"  style="background-color: orange; margin-left: 1.5rem;" onclick="copy()">Copy to clipboard</a>
+  </div>
+</div>
+
+
+
+<script src="js_libs/jquery-2.1.3.min.js"></script>
+<script src="materialize/materialize.js"></script>
+<script src="js_libs/diff.js"></script>
+<script src="prettify/prettify.js"></script>
+<script src="ardublockly_design.js"></script>
+<script src="ardublockly_blockly.js"></script>
+<script src="ardublockly.js"></script>
+
+<script>
+window.addEventListener("contextmenu", e => e.preventDefault());
+  $("#XML").hide()
+  window.addEventListener('load', function load(event)  {
+    window.removeEventListener('load', load, false);
+    Ardublockly.init();
+  });
+
+</script>
+</body>
+</html>

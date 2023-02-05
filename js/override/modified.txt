@@ -1,0 +1,9 @@
+\lib\blockly\core\workspace.js
+\lib\blockly\core\workspace_svg.js
+\lib\blockly\core\variable_model.js
+\lib\blockly\core\variable_map.js
+\lib\blockly\core\function_blocks.js
+\lib\blockly\core\field_variable.js
+\lib\blockly\core\field_function_block_member.js
+\lib\blockly\core\field_function_block.js
+\lib\blockly\core\blockly.js

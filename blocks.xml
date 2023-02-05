@@ -1,0 +1,326 @@
+<xml>
+    <category name="Logic" colour="50">
+        <block type="controls_if"></block>
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean"></block>
+        <block type="logic_switch">
+            <mutation matches="1" default="1"></mutation>
+        </block>
+        <block type="logic_ternary"></block>
+        <block type="logic_bit_shift"></block>
+    </category>
+    <category name="Loops" colour="100">
+        <block type="controls_repeat_ext">
+            <value name="TIMES">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_whileUntil"></block>
+        <block type="controls_do"></block>
+        <block type="controls_for">
+            <value name="FROM">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TO">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+            <value name="BY">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="controls_forEach"></block>
+        <block type="controls_flow_statements"></block>
+    </category>
+    <category name="Math" colour="36">
+        <block type="math_number">
+            <field name="NUM">123</field>
+        </block>
+        <block type="math_arithmetic">
+            <value name="A">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="B">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_single">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">9</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_trig">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">45</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_constant"></block>
+        <block type="math_number_property">
+            <value name="NUMBER_TO_CHECK">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="DIVISOR">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_modulo">
+            <value name="DIVIDEND">
+                <shadow type="math_number">
+                    <field name="NUM">64</field>
+                </shadow>
+            </value>
+            <value name="DIVISOR">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_constrain">
+            <value name="VALUE">
+                <shadow type="math_number">
+                    <field name="NUM">50</field>
+                </shadow>
+            </value>
+            <value name="LOW">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="HIGH">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="math_max">
+            <mutation inputs="2"></mutation>
+        </block>
+        <block type="math_min">
+            <mutation inputs="2"></mutation>
+        </block>
+        <block type="math_mux">
+            <mutation inputs="2"></mutation>
+        </block>
+    </category>
+    <category name="Text" colour="144">
+        <block type="text"></block>
+        <block type="text_join"></block>
+        <block type="text_append">
+            <value name="TEXT">
+                <shadow type="text"></shadow>
+            </value>
+        </block>
+        <block type="text_prepend">
+            <value name="TEXT">
+                <shadow type="text"></shadow>
+            </value>
+        </block>
+        <block type="text_length">
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_isEmpty">
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_indexOf">
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">{textVariable}</field>
+                </block>
+            </value>
+            <value name="FIND">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_charAt">
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">{textVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_getSubstring">
+            <value name="STRING">
+                <block type="variables_get">
+                    <field name="VAR">{textVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_replace">
+            <value name="TEXT">
+                <block type="variables_get">
+                    <field name="VAR">{textVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_delete">
+            <value name="TEXT">
+                <block type="variables_get">
+                    <field name="VAR">{textVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="text_changeCase">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_trim">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_print">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_prompt_ext">
+            <value name="TEXT">
+                <shadow type="text">
+                    <field name="TEXT">abc</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    <category name="List" colour="90">
+        <block type="lists_create_with">
+            <mutation items="0"></mutation>
+        </block>
+        <block type="lists_create_with"></block>
+        <block type="lists_repeat">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">5</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="lists_length"></block>
+        <block type="lists_isEmpty"></block>
+        <block type="lists_indexOf">
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">{listVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_getIndex">
+            <value name="VALUE">
+                <block type="variables_get">
+                    <field name="VAR">{listVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_setIndex">
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR">{listVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_getSublist">
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR">{listVariable}</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_split">
+            <value name="DELIM">
+                <shadow type="text">
+                    <field name="TEXT">,</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="lists_sort"></block>
+    </category>
+    <category name="Other" colour="56">
+        <block type="procedures_program"></block>
+        <block type="variables_local"></block>
+        <block type="variables_global"></block>
+    </category>
+    <category name="Conversions" colour="60">
+        <block type="conversion_general"></block>
+        <block type="conversion_trunc"></block>
+        <block type="conversion_to_bcd"></block>
+        <block type="conversion_from_bcd"></block>
+    </category>
+    <category name="Time and Date" colour="180">
+        <block type="time_value"></block>
+        <block type="date_value"></block>
+        <block type="time_of_day_value"></block>
+        <block type="date_and_time_value"></block>
+    </category>
+    <category name="Function Blocks" colour="270">
+        <category name="Used blocks" custom="FUNCTION_BLOCK" colour="270"></category>
+        <category name="Custom blocks" custom="CUSTOM_FUNCTION_BLOCKS" colour="270"></category>
+        <category name="Bistable" colour="270">
+            <block type="function_block_sr"></block>
+            <block type="function_block_rs"></block>
+        </category>
+        <category name="Timer" colour="270">
+            <block type="function_block_ton"></block>
+            <block type="function_block_tof"></block>
+            <block type="function_block_tp"></block>
+        </category>
+        <category name="Counter" colour="270">
+            <block type="function_block_ctu"></block>
+            <block type="function_block_ctd"></block>
+            <block type="function_block_ctud"></block>
+        </category>
+        <category name="Trigger" colour="270">
+            <block type="function_block_f_trig"></block>
+            <block type="function_block_r_trig"></block>
+        </category>
+        <category name="Misc" colour="270">
+            <block type="function_block_rtc"></block>
+        </category>
+    </category>
+    <sep></sep>
+    <category name="Variables" colour="100" custom="VARIABLE"></category>
+    <category name="Functions" colour="77" custom="FUNCTIONS"></category>
+	<category name="Configuration">
+        <block type="task_container"></block>
+        <block type="single_task"></block>
+        <block type="math_number">
+            <field name="NUM">123</field>
+        </block>
+        <block type="time_value"></block>
+    </category>
+</xml>
