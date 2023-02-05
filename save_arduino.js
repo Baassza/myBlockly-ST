@@ -10,7 +10,7 @@ function save_Arduino() {
     const a = document.createElement('a');
     const file = new Blob([code], {type: 'text/plain'});
     a.href= URL.createObjectURL(file);
-    a.download = name+"-"+prefix+".ino";
+    a.download = name+"-"+prefix+".ST";
     a.click();
     URL.revokeObjectURL(a.href);
 }
